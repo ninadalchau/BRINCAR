@@ -3,14 +3,11 @@
     <ion-content :fullscreen="true">
         <ion-text class="BRINCAR">BRINCAR</ion-text>
         <ion-item color="medium">
-            <ion-label position="Disabled">Login (CPF)</ion-label>
+            <ion-label position="floating">Login (CPF)</ion-label>
             <ion-input placeholder="CPF"></ion-input>
         </ion-item>
         <ion-item color="medium">
-            <ion-label position="fixed">Senha</ion-label>
-            <ion-input placeholder="Senha"></ion-input>
-        </ion-item>
-        <ion-item color="medium">
+            <ion-label position="floating">Senha</ion-label>
             <ion-input placeholder="Senha"></ion-input>
         </ion-item>
         <ion-item color="medium">
@@ -18,11 +15,15 @@
             <ion-input placeholder="Nome Completo"></ion-input>
         </ion-item>
         <ion-item color="medium">
-            <ion-label position="fixed">Email</ion-label>
+            <ion-label position="floating">Email</ion-label>
             <ion-input placeholder="Email"></ion-input>
         </ion-item>
+        <ion-item color="medium">
+            <ion-label position="floating">Número de Portaria</ion-label>
+            <ion-input placeholder="Número de Portaria"></ion-input>
+        </ion-item>
         <ion-row>
-            <ion-button color="dark">Cadastrar</ion-button>
+            <ion-button color="dark" href="login">Cadastrar</ion-button>
         </ion-row>
     </ion-content>
   </ion-page>

@@ -3,15 +3,14 @@
     <ion-content :fullscreen="true">
         <ion-text class="BRINCAR">BRINCAR</ion-text>
         <ion-item color="medium">
-            <ion-label position="floating">Login</ion-label>
             <ion-input placeholder="CPF"></ion-input>
         </ion-item>
         <ion-item color="medium">
-            <ion-label position="floating">Senha</ion-label>
+            <!-- <ion-label position="floating">Senha</ion-label> -->
             <ion-input placeholder="Senha"></ion-input>
         </ion-item>
         <ion-row>
-            <ion-button color="dark">ENTRAR</ion-button>
+            <ion-button color="dark" href="home">Entrar</ion-button>
         </ion-row>
         <ion-row>
             <ion-text  style="display: flex; flex-wrap: wrap;">Ainda não possui conta? <ion-router-link style="padding-left: 10px;" href="cadastroConselheiro">Cadastre-se!</ion-router-link></ion-text>
@@ -68,11 +67,8 @@ ion-item {
 
 ion-item {
     width: 70%;
-    height: 6vh;
     margin: 4vh 15%;
     border-radius: 4px;
-    display: flex;
-    justify-content: center;  
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,300&display=swap');

@@ -5,17 +5,18 @@
         <ion-buttons slot="start">
           <ion-menu-button color="primary"></ion-menu-button>
         </ion-buttons>
+        <ion-buttons slot="end">
+          <ion-button>
+            <ion-icon :icon="createOutline" color="primary" style="font-size: 28px"></ion-icon>
+          </ion-button>
+        </ion-buttons>
         <ion-title>Perfil</ion-title>
       </ion-toolbar>
     </ion-header>
-    
-    <ion-content :fullscreen="true">
-      <ion-header collapse="condense">
-        <ion-toolbar>
-          <ion-title size="large">Perfil</ion-title>
-        </ion-toolbar>
-      </ion-header>
-    
+    <ion-content :fullscreen="true"> 
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
       <div id="container">
         <strong class="capitalize">{{ $route.params.id }}</strong>
         <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
@@ -25,7 +26,9 @@
 </template>
 
 <script lang="ts">
-import { IonButtons, IonContent, IonHeader, IonMenuButton, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { IonButtons, IonContent, IonHeader, IonMenuButton, IonIcon, IonPage, IonTitle, IonToolbar } from '@ionic/vue';
+import { createOutline } from 'ionicons/icons';
+
 
 export default {
   name: 'Folder',
@@ -35,10 +38,16 @@ export default {
     IonHeader,
     IonMenuButton,
     IonPage,
+    IonIcon, 
     IonTitle,
     IonToolbar
+  },
+  setup () {
+    return {
+      createOutline
+    }
   }
-}
+};
 </script>
 
 <style scoped>
@@ -65,5 +74,11 @@ export default {
 
 #container a {
   text-decoration: none;
+}
+
+ion-avatar{
+  width: 30vw;
+  height: 30vw;
+  margin: 10px 35vw 0 35vw;
 }
 </style>
