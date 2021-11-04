@@ -4,7 +4,7 @@
       <ion-menu content-id="main-content" type="overlay">
         <ion-content>
           <ion-list id="inbox-list">
-            <ion-list-header>Inbox</ion-list-header>
+            <ion-list-header>Conselheiro</ion-list-header>
             <ion-note>hi@ionicframework.com</ion-note>
   
             <ion-menu-toggle auto-hide="false" v-for="(p, i) in appPages" :key="i">
@@ -12,17 +12,14 @@
                 <ion-icon slot="start" :ios="p.iosIcon" :md="p.mdIcon"></ion-icon>
                 <ion-label>{{ p.title }}</ion-label>
               </ion-item>
+              
             </ion-menu-toggle>
+            
           </ion-list>
   
-          <ion-list id="labels-list">
-            <ion-list-header>Labels</ion-list-header>
-  
-            <ion-item v-for="(label, index) in labels" lines="none" :key="index">
-              <ion-icon slot="start" :ios="bookmarkOutline" :md="bookmarkSharp"></ion-icon>
-              <ion-label>{{ label }}</ion-label>
-            </ion-item>
-          </ion-list>
+          
+            
+          
         </ion-content>
       </ion-menu>
       <ion-router-outlet id="main-content"></ion-router-outlet>
@@ -34,7 +31,7 @@
 import { IonApp, IonContent, IonIcon, IonItem, IonLabel, IonList, IonListHeader, IonMenu, IonMenuToggle, IonNote, IonRouterOutlet, IonSplitPane } from '@ionic/vue';
 import { defineComponent, ref } from 'vue';
 import { useRoute } from 'vue-router';
-import { archiveOutline, archiveSharp, bookmarkOutline, bookmarkSharp, person, people, cog, trashOutline, trashSharp, warningOutline, warningSharp } from 'ionicons/icons';
+import { bookmarkOutline, bookmarkSharp, personCircle, people, cog, logOut } from 'ionicons/icons';
 
 export default defineComponent({
   name: 'App',
@@ -70,26 +67,14 @@ export default defineComponent({
       {
         title: 'Perfil',
         url: 'perfil',
-        iosIcon: person,
-        mdIcon: person
+        iosIcon: personCircle,
+        mdIcon: personCircle
       },      
       {
-        title: 'Archived',
-        url: '/folder/Archived',
-        iosIcon: archiveOutline,
-        mdIcon: archiveSharp
-      },
-      {
-        title: 'Trash',
-        url: '/folder/Trash',
-        iosIcon: trashOutline,
-        mdIcon: trashSharp
-      },
-      {
-        title: 'Spam',
-        url: '/folder/Spam',
-        iosIcon: warningOutline,
-        mdIcon: warningSharp
+        title: 'Sair',
+        url: '/folder/Sair',
+        iosIcon: logOut,
+        mdIcon: logOut
       }
     ];
     const labels = ['Family', 'Friends', 'Notes', 'Work', 'Travel', 'Reminders'];
@@ -105,17 +90,12 @@ export default defineComponent({
       selectedIndex,
       appPages, 
       labels,
-      archiveOutline, 
-      archiveSharp, 
       bookmarkOutline, 
       bookmarkSharp, 
-      person, 
+      personCircle, 
       people,
-      cog, 
-      trashOutline, 
-      trashSharp, 
-      warningOutline, 
-      warningSharp,
+      cog,  
+      logOut,
       isSelected: (url: string) => url === route.path ? 'selected' : ''
     }
   }
