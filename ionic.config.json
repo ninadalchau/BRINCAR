@@ -1,0 +1,7 @@
+{
+  "name": "BRINCAR",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
