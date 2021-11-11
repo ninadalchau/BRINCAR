@@ -59,16 +59,16 @@ export default defineComponent({
         mdIcon: people
       },
       {
-        title: 'Configurações',
-        url: 'configuracoes',
-        iosIcon: cog,
-        mdIcon: cog
-      },
-      {
         title: 'Perfil',
         url: 'perfil',
         iosIcon: personCircle,
         mdIcon: personCircle
+      },
+      {
+        title: 'Configurações',
+        url: 'configuracoes',
+        iosIcon: cog,
+        mdIcon: cog
       },      
       {
         title: 'Sair',
