@@ -72,7 +72,7 @@ export default defineComponent({
       },      
       {
         title: 'Sair',
-        url: '/folder/Sair',
+        url: 'login',
         iosIcon: logOut,
         mdIcon: logOut
       }

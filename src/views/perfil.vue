@@ -6,22 +6,35 @@
           <ion-menu-button color="primary"></ion-menu-button>
         </ion-buttons>
         <ion-buttons slot="end">
-          <ion-button>
+          <ion-button href="editarPerfil">
             <ion-icon :icon="createOutline" color="primary" style="font-size: 28px"></ion-icon>
           </ion-button>
         </ion-buttons>
-        <ion-title>Perfil</ion-title>
+        <ion-title>Perfil Conselheiro</ion-title>
       </ion-toolbar>
     </ion-header>
-    <ion-content :fullscreen="true"> 
-      <ion-avatar>
-        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
-      </ion-avatar>
-      <div id="container">
-        <strong class="capitalize">{{ $route.params.id }}</strong>
-        <p>Explore <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-      </div>
-    </ion-content>
+    <ion-content :fullscreen="true">
+    <ion-row class="imagem">
+        <ion-avatar>
+          <img src="https://img.freepik.com/fotos-gratis/imagem-aproximada-em-tons-de-cinza-de-uma-aguia-careca-americana-em-um-fundo-escuro_181624-31795.jpg?size=626&ext=jpg">
+        </ion-avatar>
+    </ion-row>  
+      <ion-item color="medium">
+          <ion-label color="success">Login (CPF)</ion-label>
+      </ion-item>
+      <ion-item color="medium">
+          <ion-label color="success">Senha</ion-label>
+      </ion-item>
+      <ion-item color="medium">
+          <ion-label color="success">Nome Completo</ion-label>
+      </ion-item>
+      <ion-item color="medium">
+          <ion-label color="success">Email</ion-label>
+      </ion-item>
+      <ion-item color="medium">
+          <ion-label color="success">Número de Portaria</ion-label>
+      </ion-item>
+  </ion-content>
   </ion-page>
 </template>
 
@@ -51,34 +64,37 @@ export default {
 </script>
 
 <style scoped>
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-ion-avatar{
+ion-avatar{ 
   width: 30vw;
   height: 30vw;
-  margin: 10px 35vw 0 35vw;
+  max-height: 180px;
+  max-width: 180px;
 }
+
+ion-item {
+    width: 70%;
+    margin: 2vh 15%;
+    border-radius: 4px;
+}
+
+.imagem {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+  padding: 7vh;   
+}
+
+.botao {
+  width: 100%;
+  display: flex;
+  justify-content: center; 
+}
+
+ion-button {
+    margin: 0 2vw 0 0;
+    display: flex;
+    justify-content: center;  
+}
+
 </style>
