@@ -25,6 +25,12 @@ const routes: Array<RouteRecordRaw> = [
         path: '/perfil',
         component: () => import ('../views/perfil.vue')
       },
+
+      {
+        path: '/editarPerfil',
+        component: () => import ('../views/editarPerfil.vue')
+      },
+
       {
         path: '/perfil_crianca',
         component: () => import ('../views/perfil_crianca.vue')
