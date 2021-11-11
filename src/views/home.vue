@@ -37,17 +37,24 @@
       </ion-card> -->
 
       
-      <ion-card>
-        <ion-item>
+      <ion-card v-for="(crianca, i) in criancinhas" :key="i"> 
+            <ion-item>
+              <ion-avatar item-start> <img :src="require(`${crianca.avatar}`)"></ion-avatar>
+              <h2 >{{crianca.nome}}</h2>
+            </ion-item>
+            <ion-card-content>
+              <p>{{crianca.idade}} - {{crianca.cidade}}</p>
+            </ion-card-content> 
+        <!-- <ion-item v-for=" (c , i) in criancinhas " :key="i">
           <ion-avatar item-start> <img src="./madison.jpg"></ion-avatar>
-          <h2>Marty McFly</h2>
-        </ion-item> 
-        <ion-card-content>
+          <h2 >{{c.nome}}</h2>
+        </ion-item>  -->
+        <!-- <ion-card-content>
           <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
-        </ion-card-content>
+        </ion-card-content> -->
       </ion-card>
 
-      <ion-card>
+      <!-- <ion-card>
         <ion-grid>
           <ion-row>
           <ion-col>
@@ -63,9 +70,9 @@
         </ion-card-content>
         </ion-col>
         </ion-row>
-        </ion-grid>
+        </ion-grid>./madison.jpg
 
-      </ion-card>
+      </ion-card> -->
 
 
     </ion-content>
@@ -85,7 +92,47 @@ export default {
     IonPage,
     // IonTitle,
     IonToolbar
-  }
+  },
+
+  setup() {
+    const criancinhas = [
+      {
+        nome: 'Kauane Delvoss',
+        avatar: './madison.jpg', 
+        idade: "15 anos", 
+        cidade: "Joinville"
+      },
+      {
+      
+        nome: 'Marina Dalchau',
+        avatar: './madison.jpg', 
+        idade: "16 anos", 
+        cidade: "Belo Horizonte"
+      },
+      {
+      
+        nome: 'Juliana',
+        avatar: './madison.jpg', 
+        idade: "20 anos", 
+        cidade: "itajaí"
+      },
+      {
+      
+        nome: 'Casemiro José Mota',
+        avatar: './madison.jpg', 
+        idade: "40 anos", 
+        cidade: "Penha"
+      },
+      {
+      
+        nome: 'Marina Dalchau',
+        avatar: './madison.jpg', 
+        idade: "15 anos", 
+        cidade: "Joinville"
+      }
+    ]
+    return { criancinhas }
+    }
 }
 </script>
 
@@ -118,4 +165,15 @@ ion-searchbar {
   --border-radius: 8vh;
   height: 70px
 }
+h2 {
+  padding-left: 10px;
+  margin: 5px;
+}
+ion-card {
+  padding: 10px;
+  margin: 10px;
+  border: 2px
+  
+}
+
 </style>
