@@ -32,10 +32,29 @@ const routes: Array<RouteRecordRaw> = [
       },
 
       {
-        path: '/perfil_crianca',
-        component: () => import ('../views/perfil_crianca.vue')
+        path: '/perfilCrianca',
+        component: () => import ('../views/perfilCrianca.vue')
       },
 
+      {
+        path: '/perfilCriancaEnderecos',
+        component: () => import ('../views/perfilCriancaEnderecos.vue')
+      },
+
+      {
+        path: '/perfilCriancaMedidas',
+        component: () => import ('../views/perfilCriancaMedidas.vue')
+      },
+
+      {
+        path: '/perfilCriancaOcorrencias',
+        component: () => import ('../views/perfilCriancaOcorrencias.vue')
+      },
+
+      {
+        path: '/perfilCriancaResponsavel',
+        component: () => import ('../views/perfilCriancaResponsavel.vue')
+      },
     ]
   },
   {

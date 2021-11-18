@@ -16,23 +16,23 @@
     <ion-content :fullscreen="true">
     <ion-row class="imagem">
         <ion-avatar>
-          <img src="https://img.freepik.com/fotos-gratis/imagem-aproximada-em-tons-de-cinza-de-uma-aguia-careca-americana-em-um-fundo-escuro_181624-31795.jpg?size=626&ext=jpg">
+          <img src="https://cdn.pixabay.com/photo/2018/03/31/17/52/portrait-3278758_960_720.jpg">
         </ion-avatar>
     </ion-row>  
       <ion-item color="medium">
-          <ion-label color="success">Login (CPF)</ion-label>
+          <ion-label color="success">01554367832</ion-label>
       </ion-item>
       <ion-item color="medium">
-          <ion-label color="success">Senha</ion-label>
+          <ion-label color="success">*********</ion-label>
       </ion-item>
       <ion-item color="medium">
-          <ion-label color="success">Nome Completo</ion-label>
+          <ion-label color="success">Marta Rocha da Silva</ion-label>
       </ion-item>
       <ion-item color="medium">
-          <ion-label color="success">Email</ion-label>
+          <ion-label color="success">martajsilva@gmail.com</ion-label>
       </ion-item>
       <ion-item color="medium">
-          <ion-label color="success">Número de Portaria</ion-label>
+          <ion-label color="success">6547382974</ion-label>
       </ion-item>
   </ion-content>
   </ion-page>

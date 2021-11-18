@@ -11,7 +11,7 @@
     <ion-content :fullscreen="true">
     <ion-row class="imagem">
       <ion-avatar>
-        <img src="https://img.freepik.com/fotos-gratis/imagem-aproximada-em-tons-de-cinza-de-uma-aguia-careca-americana-em-um-fundo-escuro_181624-31795.jpg?size=626&ext=jpg">
+          <img src="https://cdn.pixabay.com/photo/2018/03/31/17/52/portrait-3278758_960_720.jpg">
       </ion-avatar>
     </ion-row>
     <ion-label color="primary" class="editar">Editar Imagem</ion-label>
@@ -110,5 +110,4 @@ ion-button {
 ion-input {
   padding: -0px;
 }
-
 </style>
