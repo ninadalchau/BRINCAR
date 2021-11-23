@@ -38,9 +38,9 @@
 
       
       <ion-card v-for="(crianca, i) in criancinhas" :key="i"> 
-            <ion-item>
+            <ion-item href="perfilCrianca">
               <ion-avatar item-start> <img :src="require(`${crianca.avatar}`)"></ion-avatar>
-              <h2 >{{crianca.nome}}</h2>
+              <h2>{{crianca.nome}}</h2>
             </ion-item>
             <ion-card-content>
               <p>{{crianca.idade}} - {{crianca.cidade}}</p>
@@ -97,13 +97,18 @@ export default {
   setup() {
     const criancinhas = [
       {
+        nome: 'Marina Eduarda Silveira',
+        avatar: './madu.jpg', 
+        idade: "15 anos", 
+        cidade: "Joinville"
+      },
+      {
         nome: 'Kauane Delvoss',
         avatar: './madison.jpg', 
         idade: "15 anos", 
         cidade: "Joinville"
       },
       {
-      
         nome: 'Marina Dalchau',
         avatar: './madison.jpg', 
         idade: "16 anos", 
@@ -124,12 +129,11 @@ export default {
         cidade: "Penha"
       },
       {
-      
         nome: 'Marina Dalchau',
         avatar: './madison.jpg', 
         idade: "15 anos", 
         cidade: "Joinville"
-      }
+      },
     ]
     return { criancinhas }
     }

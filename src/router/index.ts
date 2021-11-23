@@ -50,7 +50,10 @@ const routes: Array<RouteRecordRaw> = [
         path: '/perfilCriancaOcorrencias',
         component: () => import ('../views/perfilCriancaOcorrencias.vue')
       },
-
+      {
+        path: '/teste',
+        component: () => import ('../views/teste.vue')
+      },
       {
         path: '/perfilCriancaResponsavel',
         component: () => import ('../views/perfilCriancaResponsavel.vue')

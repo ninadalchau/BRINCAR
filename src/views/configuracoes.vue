@@ -15,6 +15,9 @@
           <ion-title size="large">Configurações</ion-title>
         </ion-toolbar>
       </ion-header>
+      <ion-row>
+        <ion-button color="dark" href="home">Entrar</ion-button>
+      </ion-row>
     </ion-content>
   </ion-page>
 </template>
