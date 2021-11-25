@@ -19,7 +19,7 @@
             </ion-card-content> 
       </ion-card>
       <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-        <ion-fab-button color="danger" href="formulario">
+        <ion-fab-button color="primary" href="formulario">
           <ion-icon :icon="add" color="light"></ion-icon>
         </ion-fab-button>
       </ion-fab>

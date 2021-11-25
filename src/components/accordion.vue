@@ -2,7 +2,7 @@
   <ion-list>
     <div v-for="listItem in displayList" :key="listItem.id" style="">
       <ion-item class="ion-padding" style="padding: 0 !important; background-color: #f1f1f1;" lines="none" :ref="'header-' + listItem.id">
-        <h5 slot="start">{{listItem.name}}</h5>
+        <h5 slot="start" style="background-color: primary">{{listItem.name}}</h5>
 
         <ion-fab-button style="--box-shadow: none;" color="primary" size="small" @click="headerClicked(listItem)" v-if="!isExpanded(listItem)" slot="end">
           <ion-icon :icon="chevronDownOutline"></ion-icon>
