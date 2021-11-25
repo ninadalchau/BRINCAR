@@ -1,99 +1,126 @@
-<template>
-  <ion-page>    
-    <ion-content :fullscreen="true">
-      <ion-text class="BRINCAR">BRINCAR</ion-text>
-      <ion-item color="medium">
-          <ion-input placeholder="CPF"></ion-input>
-      </ion-item>
-      <ion-item color="medium">
-        <ion-input placeholder="Senha"></ion-input>
-      </ion-item>
-      <ion-row>
-          <ion-button color="dark" href="home">Entrar</ion-button>
-      </ion-row>
-      <ion-row>
-          <ion-text  style="display: flex; flex-wrap: wrap;">Ainda não possui conta? <ion-router-link style="padding-left: 10px;" href="cadastroConselheiro">Cadastre-se!</ion-router-link></ion-text>
-      </ion-row>
-    </ion-content>
-  </ion-page>
-</template>
+<script setup>
+import { useRouter } from "vue-router";
+// import { useForm, useField } from "vee-validate";
+import * as yup from "yup";
+import useAuth from "../composable/useAuth";
+import useError from "../composable/useError"
+const schema = yup.object({
+  username: yup.string().required().email().label("Email"),
+  password: yup.string().required().min(8).label("Password"),
+});
 
-<script lang="ts">
-import { IonContent, IonPage } from '@ionic/vue';
+// useForm({
+//   validationSchema: schema,
+// });
+const { error, setError } = useError();
 
-export default {
-  name: 'Folder',
-  components: {
-    IonContent,
-    IonPage
-  }
+// import { useTimeout, promiseTimeout } from "@vsueuse/core";
+
+// const { ready, start } = useTimeout(3000, { controls: true });
+const username = {
+  value: 'eduardo.silva@gmail.com'
 }
+const password = {
+  value:''
+}
+// const { value: username, errorMessage: emailError };
+// const { value: password, errorMessage: passwordError };
+const { isAuthenticated, login, signup, googleLogin } = useAuth();
+
+const router = useRouter();
+
+const goToHome = () => {
+  if (isAuthenticated.value) {
+    router.push("/");
+  } else {
+    setError("Invalid username or password");
+    // start();
+  }
+};
+
+const logginIn = async () => {
+  try {
+    await login(username.value, password.value);
+    goToHome();
+  } catch (e) {
+    console.log(e)
+  }
+};
+
+const signingUp = async () => {
+  await signup(username.value, password.value);
+  goToHome();
+};
+
+const google = async () => {
+  await googleLogin();
+  goToHome();
+};
+
+
+
+
 </script>
 
-<style scoped>
+<template>
+  <div
+    class="flex flex-col items-center justify-center space-y-12  min-h-screen-nonav"
+  >
+    <div
+      class="flex items-center justify-center overflow-hidden bg-gray-200 rounded-lg shadow-2xl "
+    >
+      
+      <form @submit.prevent="logginIn" class="flex flex-col p-4 space-y-4">
+        <input
+          name="username"
+          type="text"
+          class="p-2 border-2 rounded-lg"
+          placeholder="Email"
+          v-model="username.value"
+        />
+        <span class="text-xs text-center text-red-500">{{ emailError }}</span>
+        <input
+          name="password"
+          type="password"
+          class="p-2 border-2 rounded-lg"
+          placeholder="Password"
+          v-model="password.value"
+        />
+        <span class="text-xs text-center text-red-500">{{
+          passwordError
+        }}</span>
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;1,300&display=swap');
-
-#container {
-  text-align: center;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-ion-item {
-  background-color: #8c8c8c;
-  font-size: 20px;
-  line-height: 26px;
-}
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-  color: #8c8c8c;
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
-}
-
-ion-item {
-  width: 70%;
-  margin: 4vh 15%;
-  border-radius: 4px;
-}
-
-.BRINCAR {
-  display: flex;
-  justify-content: center;
-  margin: 15vh 0 10vh 0;
-  font-size: 250%;
-  height: 7vh;
-  font-family: 'Nunito', sans-serif;
-}
-
-ion-row{
-  display: flex;
-  justify-content: center;    
-}
-
-ion-button {
-  width: 198px;
-  display: flex;
-  justify-content: center;  
-}
-
-ion-link{
-  display: flex;
-  justify-content: center;    
-}
-
-ion-text{
-  margin: 20px 0 5px 0;
-  display: flex;
-  justify-content: center;    
-}
-</style>
+        <div class="flex space-x-2">
+          <button
+            type="submit"
+            @submit.prevent="logginIn"
+            class="w-1/2 py-2 text-yellow-200 bg-yellow-600 rounded-lg"
+          >
+            Login
+          </button>
+          <button
+            @click="signingUp"
+            class="w-1/2 py-2 text-green-200 bg-green-600 rounded-lg"
+          >
+            Sing Up
+          </button>
+        </div>
+        <button
+          @click="google"
+          class="flex justify-center py-2 bg-white rounded-lg hover:bg-gray-300"
+        >
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+            alt=""
+          />
+        </button>
+      </form>
+    </div>
+    <div
+      v-if="!ready && error"
+      class="absolute w-1/3 p-4 text-center text-red-800 bg-red-300 rounded-lg  bottom-2 right-2"
+    >
+      {{ error }}
+    </div>
+  </div>
+</template>
