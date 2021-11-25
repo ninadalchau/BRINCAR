@@ -5,8 +5,11 @@
     <ion-item color="medium" style="margin-top: 0">
       <ion-grid>
         <ion-row>
-          <ion-col><ion-text color="dark">{{item.info}}</ion-text></ion-col>
-          <ion-col><ion-input color="success" placeholder="xx.xx.xxx.xx"></ion-input></ion-col>
+          <ion-col>  <ion-input value="custom"></ion-input></ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>  <ion-input value="custom"></ion-input></ion-col>
+          <ion-col>  <ion-input value="custom"></ion-input></ion-col>
         </ion-row>
       </ion-grid>
     </ion-item>
@@ -17,7 +20,6 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "Item",
-  props: ["item"],
+  name: "DadosBasicos",
 });
 </script>
