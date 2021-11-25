@@ -30,7 +30,7 @@
       </ion-segment>
     </ion-toolbar>
     <div class="botao" style="padding: 2vh 0 0 0">
-      <ion-button color="danger">Nova Ocorrência</ion-button>
+      <ion-button color="danger" href="novaOcorrencia">Nova Ocorrência</ion-button>
     </div>
     <ion-item color="medium" style="margin-top: 3vh">
       <ion-label color="dark" style="font-weight: bold" class="subtitulo">17/06/2020</ion-label>
