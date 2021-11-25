@@ -15,10 +15,7 @@
               
             </ion-menu-toggle>
             
-          </ion-list>
-  
-          
-            
+          </ion-list>            
           
         </ion-content>
       </ion-menu>

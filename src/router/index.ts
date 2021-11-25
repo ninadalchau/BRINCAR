@@ -51,12 +51,20 @@ const routes: Array<RouteRecordRaw> = [
         component: () => import ('../views/perfilCriancaOcorrencias.vue')
       },
       {
-        path: '/teste',
-        component: () => import ('../views/teste.vue')
+        path: '/formulario',
+        component: () => import ('../views/formulario.vue')
       },
       {
         path: '/perfilCriancaResponsavel',
         component: () => import ('../views/perfilCriancaResponsavel.vue')
+      },
+      {
+        path: '/novaOcorrencia',
+        component: () => import ('../views/novaOcorrencia.vue')
+      },
+      {
+        path: '/novaMedida',
+        component: () => import ('../views/novaMedida.vue')
       },
     ]
   },
