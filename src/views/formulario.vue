@@ -33,8 +33,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { searchCircle, filterCircle, add } from "ionicons/icons";
-import accordion from "@/components/accordion";
-import item from "@/components/item";
+import accordion from "@/components/accordion.vue";
+import item from "@/components/item.vue";
 
 export default defineComponent({
   name: 'formulario',
