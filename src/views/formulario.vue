@@ -1,30 +1,40 @@
 <template>
   <ion-page>
-
+    <ion-header :translucent="true">
+      <ion-toolbar>
+        <ion-buttons slot="start">
+          <ion-menu-button color="primary"></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Cadastro Crinça</ion-title>
+      </ion-toolbar>
+    </ion-header>
     <!-- Content -->
     <ion-content :fullscreen="true">
       <!-- Accordion -->
       <div>
-        <ion-progress-bar v-if="tosquias.length === 0" type="indeterminate"></ion-progress-bar>
-        <accordion v-else :list="tosquias">
-          <template v-slot="s">
-            <!-- Item Slide -->
-            <item @edit="editar()" :item="s.item" />
-          </template>
+        <accordion :list="section1">
+            <dados-basicos />
+        </accordion>
+        <accordion :list="section2">
+            <documentos-crianca />
+        </accordion>
+        <accordion :list="section3">
+            <responsavel-crianca />
+        </accordion>
+        <accordion :list="section4">
+            <endereco-crianca />
+        </accordion>
+        <accordion :list="section5">
+            <escola-crianca />
+        </accordion>
+        <accordion :list="section6">
+            <ocorrencia-crianca />
+        </accordion>
+        <accordion :list="section7">
+                     <medida-crianca />
+
         </accordion>
       </div>
-
-      <!-- Message Bottom -->
-      <div id="message" v-show="tosquias.length !== 0">
-        <p>Abra o item e arraste para o lado para mais opções</p>
-      </div>
-
-      <!-- Float Button -->
-      <ion-fab horizontal="end" vertical="bottom" slot="fixed">
-        <ion-fab-button color="danger" href="/add">
-          <ion-icon :icon="add"></ion-icon>
-        </ion-fab-button>
-      </ion-fab>
     </ion-content>
   </ion-page>
 </template>
@@ -32,51 +42,69 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+<<<<<<< HEAD
 import { searchCircle, filterCircle, add } from "ionicons/icons";
-import accordion from "@/components/accordion";
-import item from "@/components/item";
+import accordion from "@/components/accordion.vue";
+import item from "@/components/item.vue";
+=======
+import { searchCircle, filterCircle } from "ionicons/icons";
+import accordion from "@/components/accordion.vue";
+// import item from "@/components/item.vue";
+import DadosBasicos from '@/components/criancas/form/DadosBasicos.vue'
+import DocumentosCrianca from '@/components/criancas/form/DocumentosCrianca.vue'
+import ResponsavelCrianca from '@/components/criancas/form/ResponsavelCrianca.vue'
+import EnderecoCrianca from '@/components/criancas/form/EnderecoCrianca.vue'
+import EscolaCrianca from '@/components/criancas/form/EscolaCrianca.vue'
+import OcorrenciaCrianca from '@/components/criancas/form/OcorrenciaCrianca.vue'
+import MedidaCrianca from '@/components/criancas/form/MedidaCrianca.vue'
+>>>>>>> 9fdb20a07ac046e3c5a2d93c6436fd61103d08ff
 
 export default defineComponent({
   name: 'formulario',
   components: {
     accordion,
-    item,
+    // item,
+    DadosBasicos,
+    DocumentosCrianca,
+    ResponsavelCrianca,
+    EnderecoCrianca,
+    EscolaCrianca,
+    OcorrenciaCrianca,
+    MedidaCrianca
   },
   setup() {
-    const tosquias = [
-      {
-        ovelha : 1,
-        id: 1,
-        date : '01/01/2001',
-        amountOfWool : 1,
-      },{
-        ovelha : 2,
-        id: 2,
-        date : '01/01/2001',
-        amountOfWool : 1,
-      },{
-        ovelha : 3,
-        id: 3,
-        date : '01/01/2001',
-        amountOfWool : 1,
-      },{
-        ovelha : 4,
-        id: 4,
-        date : '01/01/2001',
-        amountOfWool : 1,
-      },{
-        ovelha : 5,
-        id: 5,
-        date : '01/01/2001',
-        amountOfWool : 1,
-      },
+    const section1 = [
+    {id: 1, name: "Dados Básicos", info: {nome: "nome", data: "Data", sexo: "Sexo"}},
+    ]
+    const section2 = [
+    {id: 2, name: "Documentos", info: {cpf: "CPF", rg: "RG", ola: "OLA"}},
+    ]
+    const section3 = [
+    {id: 3, name: "Responsável", info: {}},
+    ]
+    const section4 = [
+    {id: 4, name: "Endereço", info: {}},
+    ]
+    const section5 = [
+    {id: 5, name: "Escola", info: {}},
+    ]
+    const section6 = [
+    {id: 6, name: "Ocorrência", info: {}},
+    ]
+    const section7 = [
+    {id: 7, name: "Medida", info: {}}
     ];
 
     return {
-      tosquias,
+      section1,
+      section2,
+      section3,
+      section4,
+      section5,
+      section6,
+      section7,
       searchCircle,
       filterCircle,
-      add
     }
   }
 })
