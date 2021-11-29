@@ -42,16 +42,10 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-<<<<<<< HEAD
+
 import { searchCircle, filterCircle, add } from "ionicons/icons";
 import accordion from "@/components/accordion.vue";
 import item from "@/components/item.vue";
-<<<<<<< HEAD
-=======
-=======
-import { searchCircle, filterCircle } from "ionicons/icons";
-import accordion from "@/components/accordion.vue";
-// import item from "@/components/item.vue";
 import DadosBasicos from '@/components/criancas/form/DadosBasicos.vue'
 import DocumentosCrianca from '@/components/criancas/form/DocumentosCrianca.vue'
 import ResponsavelCrianca from '@/components/criancas/form/ResponsavelCrianca.vue'
@@ -59,8 +53,7 @@ import EnderecoCrianca from '@/components/criancas/form/EnderecoCrianca.vue'
 import EscolaCrianca from '@/components/criancas/form/EscolaCrianca.vue'
 import OcorrenciaCrianca from '@/components/criancas/form/OcorrenciaCrianca.vue'
 import MedidaCrianca from '@/components/criancas/form/MedidaCrianca.vue'
->>>>>>> 9fdb20a07ac046e3c5a2d93c6436fd61103d08ff
->>>>>>> e8761b8d2c09c39867f2cd2dc8dda83edcc4db27
+
 
 export default defineComponent({
   name: 'formulario',
